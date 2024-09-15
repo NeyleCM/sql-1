@@ -35,38 +35,41 @@
 
 
 -- Ejercicio 10: Encontrar el nombre y edad del usuario más joven.
--- 
+-- SELECT nombre, edad FROM usuarios_lenguajes WHERE edad = (SELECT MIN(edad) FROM usuarios_lenguajes);
 
 
 -- Ejercicio 11: Seleccionar los usuarios y sus edades ordenados por edad de forma descendente.
 -- SELECT * FROM usuarios_lenguajes ORDER BY edad DESC;
 
 -- Ejercicio 12: Contar cuántos usuarios tienen más de 28 años.
--- Tu respuesta aquí
+-- SELECT COUNT(*) AS total_usuarios FROM usuarios_lenguajes WHERE edad > 28;
 
 
 -- Ejercicio 13: Seleccionar los usuarios cuyo apellido contiene la letra 'a'.
--- Tu respuesta aquí
+-- SELECT *  FROM usuarios_lenguajes WHERE apellido LIKE '%a%';
 
 
 -- Ejercicio 14: Encontrar el lenguaje más popular entre los usuarios menores de 30 años.
--- Tu respuesta aquí
+-- SELECT lenguaje, COUNT(*) AS total_usuarios FROM usuarios_lenguajes WHERE edad < 30 GROUP BY lenguaje ORDER BY total_usuarios DESC LIMIT 1;
 
 
 -- Ejercicio 15: Seleccionar el usuario  mayor de 25 y que sepa el lenguaje 'TypeScript'.
--- Tu respuesta aquí
+-- SELECT * FROM usuarios_lenguajes WHERE edad > 25 AND lenguaje = 'TypeScript';
 
 
 -- Ejercicio 16: Contar cuántos usuarios tienen un lenguaje asociado llamado 'Python'.
--- Tu respuesta aquí
+-- SELECT COUNT(DISTINCT lenguaje) AS lenguaje_python FROM usuarios_lenguajes WHERE lenguaje = 'Python';
+-- SELECT COUNT(DISTINCT lenguaje) AS lenguaje_python FROM usuarios_lenguajes WHERE lenguaje LIKE 'Python';
 
 
 -- Ejercicio 17: Seleccionar los usuarios y sus lenguajes asociados, si tienen alguno, ordenados por nombre de usuario.
--- Tu respuesta aquí
+-- SELECT nombre, lenguaje FROM usuarios_lenguajes ORDER BY nombre;
+-- SELECT nombre, lenguaje FROM usuarios_lenguajes;
 
 
 -- Ejercicio 18: Encontrar los usuario con el email que contiene la palabra 'example'.
--- Tu respuesta aquí
+-- SELECT * FROM usuarios_lenguajes WHERE email LIKE '%example%';
+-- SELECT * FROM usuarios_lenguajes WHERE email LIKE '%example.com';
 
 
 -- Ejercicio 19: Seleccionar los usuarios que saben al menos un lenguaje y tienen una edad entre 25 y 35 años.
