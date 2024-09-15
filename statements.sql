@@ -3,7 +3,7 @@
 
 
 -- Ejercicio 2: Contar cuántos usuarios hay en total.
--- Tu respuesta aquí
+-- SELECT COUNT(*) FROM usuarios_lenguajes;
 
 
 -- Ejercicio 3: Seleccionar los usuarios mayores de 30 años.
@@ -15,32 +15,31 @@
 
 
 -- Ejercicio 5 OPCION 2: Seleccionar los usuarios que tienen 28 años. 
--- Tu respuesta aquí
+-- SELECT * FROM usuarios_lenguajes WHERE edad LIKE '28'
 
 
 -- Ejercicio 6: Encontrar el usuario con el email 'juan.gomez@example.com'.
--- Tu respuesta aquí
+-- SELECT * FROM usuarios_lenguajes WHERE email LIKE 'juan.gomez@example.com'Tu respuesta aquí
 
 
 -- Ejercicio 7: Seleccionar los usuarios que saben Java y tienen menos de 25 años.
--- Tu respuesta aquí
-
+-- SELECT * FROM usuarios_lenguajes WHERE lenguaje = 'Java' AND edad < 25;
+-- SELECT * FROM usuarios_lenguajes WHERE lenguaje = 'Java' OR edad < 25;
 
 -- Ejercicio 8 OPCION 2: Contar cuántos usuarios con edades diferentes saben el lenguaje 'Java'.
--- Tu respuesta aquí
+-- SELECT COUNT(DISTINCT edad) AS edades_diferentes FROM usuarios_lenguajes WHERE lenguaje = 'Java';
 
 
 -- Ejercicio 9: Seleccionar los usuarios que no saben ningún lenguaje.
--- Tu respuesta aquí
+-- SELECT * FROM usuarios_lenguajes WHERE lenguaje = '';
 
 
 -- Ejercicio 10: Encontrar el nombre y edad del usuario más joven.
--- Tu respuesta aquí
+-- 
 
 
 -- Ejercicio 11: Seleccionar los usuarios y sus edades ordenados por edad de forma descendente.
--- Tu respuesta aquí
-
+-- SELECT * FROM usuarios_lenguajes ORDER BY edad DESC;
 
 -- Ejercicio 12: Contar cuántos usuarios tienen más de 28 años.
 -- Tu respuesta aquí
