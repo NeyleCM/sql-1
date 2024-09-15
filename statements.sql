@@ -73,31 +73,35 @@
 
 
 -- Ejercicio 19: Seleccionar los usuarios que saben al menos un lenguaje y tienen una edad entre 25 y 35 años.
--- Tu respuesta aquí
+-- SELECT DISTINCT nombre, apellido, edad FROM usuarios_lenguajes WHERE edad BETWEEN 25 AND 35;
+-- SELECT nombre, apellido, edad FROM usuarios_lenguajes WHERE edad BETWEEN 25 AND 35 GROUP BY nombre, apellido, edad HAVING COUNT(lenguaje) > 0;
 
 
 -- Ejercicio 20: Contar cuántos usuarios tienen un lenguaje asociado llamado 'CSS' y tienen menos de 30 años.
--- Tu respuesta aquí
+--  SELECT COUNT(*) AS total_css FROM usuarios_lenguajes WHERE lenguaje = 'CSS' AND edad < 30;
 
 
 -- Ejercicio 21: Seleccionar los usuarios que tienen al menos un lenguaje asociado y mostrar la cantidad de lenguajes que tienen.
--- Tu respuesta aquí
+-- SELECT nombre, apellido, COUNT(lenguaje) AS cantidad_lenguajes FROM usuarios_lenguajes GROUP BY nombre, apellido HAVING COUNT(lenguaje) > 0;
 
 
 -- Ejercicio 22: Encontrar el lenguaje con más caracteres.
--- Tu respuesta aquí
+-- SELECT lenguaje FROM usuarios_lenguajes ORDER BY LENGTH(lenguaje) DESC LIMIT 1;
 
 
 -- Ejercicio 23: Seleccionar los usuarios y mostrar la concatenación de su nombre y apellido.
--- Tu respuesta aquí
+-- SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo FROM usuarios_lenguajes;
 
 
 -- Ejercicio 24: Contar cuántos lenguajes diferentes conocen los usuarios mayores de 25 años. 
--- Tu respuesta aquí
+-- SELECT COUNT(DISTINCT lenguaje) AS total_lenguajes FROM usuarios_lenguajes WHERE edad > 25;
 
 
 -- Ejercicio 25: Seleccionar los usuarios que tienen exactamente la misma edad.
--- Tu respuesta aquí
+-- SELECT nombre, apellido, edad FROM usuarios_lenguajes WHERE edad IN (
+    -- SELECT edad FROM usuarios_lenguajes GROUP BY edad HAVING COUNT(*) > 1
+    -- ) ORDER BY edad ASC;
+
 
 
 -- Ejercicio 26: Encontrar el usuario con el lenguaje con mayor número de carácteres y que tenga una edad menor de 30 años. 
