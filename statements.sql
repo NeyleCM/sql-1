@@ -11,6 +11,7 @@
 
 
 -- Ejercicio 4: Contar cuántos usuarios saben JavaScript.
+-- SELECT COUNT(*) FROM usuarios_lenguajes WHERE lenguaje LIKE 'JavaScript'
 -- SELECT * FROM usuarios_lenguajes WHERE lenguaje LIKE 'JavaScript'
 
 
